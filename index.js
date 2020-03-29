@@ -7,16 +7,6 @@ let counter2 = 0
 
 
 
-const winArr = [
-    [1, 2, 3],
-    [1, 4, 7],
-    [1, 5, 9],
-    [2, 5, 8],
-    [3, 6, 9],
-    [4, 5, 6],
-    [7, 8, 9],
-    [3, 5, 7]
-];
 
 const idArray = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
@@ -75,7 +65,7 @@ const setPlayerArray = (playerArr, marker) => {
     playerArr.push(parseInt(marker.id))
 
     if (checkWinner(playerArr) !== undefined) {
-        playerArr === player1Arr ? winPlayer = 'player 1' : winPlayer = 'player 2'
+        playerArr === player1Arr ? winPlayer = 'Player 1' : winPlayer = 'Player 2'
         highLightWinArray(checkWinner(playerArr), winPlayer)
     }
 }
@@ -100,7 +90,7 @@ findPosition();
 
 const highLightWinArray = (arrayWinner, player) => {
     arrayWinner.forEach(e => document.getElementById(`${e}`).setAttribute("class", "squareWin"));
-    document.querySelector('.winner').textContent = player + ' is the winner'
+    document.querySelector('.winner').textContent = player + ' wins'
     player === 'player 1' ? counter1++ : counter2++
         document.querySelector('.score1').textContent = counter1
     document.querySelector('.score2').textContent = counter2
@@ -109,15 +99,23 @@ const highLightWinArray = (arrayWinner, player) => {
 
 }
 
-const checkWinner = (playerArr) => {
+const checkWinner = (movesArr) => {
+
+    const winArr = [
+        [1, 2, 3],
+        [1, 4, 7],
+        [1, 5, 9],
+        [2, 5, 8],
+        [3, 6, 9],
+        [4, 5, 6],
+        [7, 8, 9],
+        [3, 5, 7]
+    ];
+
     return winArr.find(el => {
-        let test = el.every(element => playerArr.indexOf(element) > -1)
-        if (test === true) return test
+        return el.every(element => movesArr.indexOf(element) > -1)
     })
-
 }
-
-
 
 document.querySelector('.button').addEventListener('click', clearGame)
 document.querySelector('.buttonReset').addEventListener('click', resetGame)
