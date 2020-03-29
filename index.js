@@ -91,7 +91,7 @@ findPosition();
 const highLightWinArray = (arrayWinner, player) => {
     arrayWinner.forEach(e => document.getElementById(`${e}`).setAttribute("class", "squareWin"));
     document.querySelector('.winner').textContent = player + ' wins'
-    player === 'player 1' ? counter1++ : counter2++
+    player === 'Player 1' ? counter1++ : counter2++
         document.querySelector('.score1').textContent = counter1
     document.querySelector('.score2').textContent = counter2
     gameOver = 1
