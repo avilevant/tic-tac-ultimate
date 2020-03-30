@@ -66,12 +66,6 @@
     color: rgb(75, 150, 212);
 }
 
-.button:hover {
-    cursor: pointer;
-    background-color: rgb(75, 150, 212);
-    color: rgb(238, 223, 10);
-}
-
 .winner {
     position: absolute;
     left: 50%;
@@ -144,12 +138,6 @@
     border-radius: 25px;
     background-color: rgb(10, 14, 66);
     color: rgb(75, 150, 212);
-}
-
-.buttonReset:hover {
-    cursor: pointer;
-    background-color: rgb(75, 150, 212);
-    color: rgb(238, 223, 10);
 }
 
 .backimg {

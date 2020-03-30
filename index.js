@@ -30,8 +30,8 @@ const clearGame = () => {
 
 const resetGame = () => {
     clearGame()
-    document.querySelector('.score1').textContent = ''
-    document.querySelector('.score2').textContent = ''
+    document.querySelector('.score1').textContent = '0'
+    document.querySelector('.score2').textContent = '0'
 
     counter1 = 0
     counter2 = 0
